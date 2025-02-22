@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Cat Name Generator</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+  <!-- Orange header -->
+  <div class="header">
+    Name your cat!
+  </div>
+
+  <h2>Cat name generator!</h2>
+
+  <div>
+    <button id="generateBtn">generate name</button>
+  </div>
+
+  <h3>Your cat name is...</h3>
+  
+  <div id="output"></div>
+
+  <!-- Audio element for the button -->
+<audio id="audio" src="img/333.mp3"></audio>
+
+<script>
+  var btn = document.getElementById("generateBtn");
+  var out = document.getElementById("output");
+  var audio = document.getElementById("audio");
+
+  btn.addEventListener("click", function() {
+    getWord();
+    playSound();
+  });
+
+  function getWord(){
+    var theWord= [
+      'Aiden', 'Olivia', 'James', 'Sophia', 'Liam', 'Isabella', 'Noah', 'Mia', 'Jackson', 'Ava',
+      'Ethan', 'Charlotte', 'Lucas', 'Harper', 'Mason', 'Amelia', 'Carter', 'Evelyn', 'Benjamin',
+      'Abigail', 'Henry', 'Emily', 'Elijah', 'Ella', 'Alexander', 'Avery', 'Logan', 'Lily', 'Jacob',
+      'Aria', 'Michael', 'Grace', 'Daniel', 'Scarlett', 'Matthew', 'Sofia', 'Sebastian', 'Chloe',
+      'David', 'Eleanor', 'Joseph', 'Hannah', 'Owen', 'Zoey', 'Wyatt', 'Luna', 'Jack', 'Aubrey',
+      'Luke', 'Penelope', 'Levi', 'Nora', 'Samuel', 'Layla', 'Gabriel', 'Riley', 'Grayson', 'Lillian',
+      'Julian', 'Zoe', 'Isaac', 'Samantha', 'Anthony', 'Madison', 'Dylan', 'Paisley', 'Leo', 'Raya',
+      'Hudson', 'Elena', 'Caleb', 'Brooklyn', 'Nathan', 'Savannah', 'Ezra', 'Arianna', 'Charles',
+      'Claire', 'Thomas', 'Victoria', 'Isaiah', 'Adeline', 'Andrew', 'Everly', 'Joshua', 'Violet',
+      'Elias', 'Stella', 'Ryan', 'Ellie', 'Adam', 'Lucy', 'Christian', 'Natalie', 'Nicholas', 'Lydia',
+      'Aaron', 'Alice', 'Adrian', 'Hailey', 'Jonathan', 'Skylar'
+    ];
+
+    var wordNum = Math.floor(Math.random() * theWord.length);
+
+    out.textContent = theWord[wordNum];
+  }
+
+  function playSound() {
+    audio.play();
+  }
+</script>
+  <footer>
+    <div class="footer"></div>
+  </footer>
+      
+</body>
+</html>
